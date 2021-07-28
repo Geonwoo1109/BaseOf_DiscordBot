@@ -21,4 +21,4 @@ client.on(
     }
 );
 
-client.login('ODY5OTU4MDM3ODk5NzM5MTY4.YQFxjw.R1qOm-Hv324B3pqW77mVmNHtYAM');
+client.login(''); token
