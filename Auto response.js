@@ -12,7 +12,7 @@ client.on(
 	
 	    switch (msg.content) {
 		    case "테스트":
-		        msg.reply("테스트 성공!");
+		        msg.reply("테스트 성공!"); //@건우, 테스트 성공!
 		        break;
 		    case "ping":
 		        msg.reply("ping: ${client.ws.ping}ms");
