@@ -7,4 +7,4 @@ https://discord-kr.js.org/#/
   이거 쓸라면 문자열을 `(백틱)으로 감싸줘야함`
   안그러면 일반 문자열로 취급
 
-임베트 기능 전부 사용법: https://discordjs.guide/popular-topics/embeds.html
+임베 기능 전부 사용법: https://discordjs.guide/popular-topics/embeds.html
