@@ -168,4 +168,4 @@ client.on ("message", async message => {
 
 });
 
-client.login("ODY5OTU4MDM3ODk5NzM5MTY4.YQFxjw.ekE5-ustoJhMfm4Iuohm8gPWcGU");
+client.login("");
