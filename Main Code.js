@@ -151,20 +151,32 @@ client.on ("message", async message => {
         const attachment = new Discord.MessageAttachment("https://i.imgur.com/w3duR07.png");
         message.channel.send(attachment);
     };
-    if (message.content.startsWith("사진 ")) {
-        message.channel.send(
-            new Discord.MessageAttachment(message.content.substr(3))
-        );
+
+    /*==사용자의 행동에 따라 오류가 날 수 있는 부분==*/
+    try {
+        if (message.content.startsWith("사진 ")) {
+            message.channel.send(
+                new Discord.MessageAttachment(message.content.substr(3))
+            );
+        };
+        
+        //https://discordjs.guide/miscellaneous/parsing-mention-arguments.html
+        //강퇴하기(미완성)
+        if (message.content.startsWith("킥 ")) {
+            if (!message.guild) return;
+            const user = message.mentions.users.first();
+            
+        };
+
+        if (message.content.startsWith("삭제 ")) {
+            const amount = message.content.substr(3);
+
+        };
+
+    } catch(error) {
+        message.channel.send( error );
     };
-    
-    //https://discordjs.guide/miscellaneous/parsing-mention-arguments.html
-    //강퇴하기(미완성)
-    if (message.content.startsWith("kick ")) {
-        if (!message.guild) return;
 
-        const user = message.mentions.users.first();
-
-    }
 
 });
 
