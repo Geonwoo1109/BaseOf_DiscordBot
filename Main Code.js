@@ -8,7 +8,7 @@ const client = new Discord.Client();
 const { MessageEmbed } = require("discord.js");
 //const MessageEmbed = new Discord.MessageEmbed();
 
-const mainImage = "";
+const ProfileImageLink = "";
 
 client.on ("ready", () => {
     console.log (`Logined it as ${client.user.tag}!`);
