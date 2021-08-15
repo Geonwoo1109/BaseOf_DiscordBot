@@ -19,7 +19,17 @@ client.on ("message", async message => {
     //명령어모음
     if (message.content == "명령어") {
         const Command_Embed = new MessageEmbed()
-            .setTitle("건우봇의 명령어 모음")
+            .setTitle("건우봇의 명령어")
+            .setDescription("접두사는 `.` `..` 입니다.")
+            .addFields(
+                { name: "도움말", value: "> `.help`" }
+            );
+        message.channel.send( Command_Embed );
+    };
+
+    if (message.content == "명령어 설명") {
+        const Command_Embed_Details = new MessageEmbed()
+            .setTitle("건우봇의 명령어 상세설명")
             .setColor("#170370")
             .setAuthor("Geonwoo.Kim")
             .setDescription(`반가워요, ${message.author.username}님!`)
@@ -38,7 +48,7 @@ client.on ("message", async message => {
             )
             .setTimestamp()
             .setFooter("더 자세한 문의는 `건우#8173`", );
-        message.channel.send( Command_Embed );
+        message.channel.send( Command_Embed_Details );
     };
 
     //자동응답
