@@ -8,7 +8,7 @@ const client = new Discord.Client();
 const { MessageEmbed } = require("discord.js");
 //const MessageEmbed = new Discord.MessageEmbed();
 
-const ProfileImageLink = "https://github.com/Geonwoo1109/DiscordBot/blob/main/ProfileImage.png";
+const ProfileImageLink = "https://raw.githubusercontent.com/Geonwoo1109/DiscordBot/main/ProfileImage.png";
 
 client.on ("ready", () => {
     console.log (`Logined it as ${client.user.tag}!`);
@@ -23,10 +23,11 @@ client.on ("message", async message => {
             .setDescription("접두사는 `.` `..` 입니다.")
             .addFields(
                 { name: "도움말", value: "> `.help` `..help`" }, 
-                { name: "따라하기", value: "> `.따라하기`" }
+                { name: "따라하기", value: "> `.따라하기`" }, 
+                { name: "명령어", value: "> `abc` `def` `ghi`" }
             )
-            .setThumbnail("https://github.com/Geonwoo1109/DiscordBot/blob/main/ProfileImage.png")
-            .setFooter("Geonwoo.Kim");
+            .setThumbnail( ProfileImageLink )
+            .setFooter("Geonwoo.Kim", ProfileImageLink);
         message.channel.send( Command_Embed );
     };
 
