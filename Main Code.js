@@ -8,7 +8,7 @@ const client = new Discord.Client();
 const { MessageEmbed } = require("discord.js");
 //const MessageEmbed = new Discord.MessageEmbed();
 
-const ProfileImageLink = "";
+const ProfileImageLink = "https://github.com/Geonwoo1109/DiscordBot/blob/main/ProfileImage.png";
 
 client.on ("ready", () => {
     console.log (`Logined it as ${client.user.tag}!`);
@@ -17,17 +17,20 @@ client.on ("ready", () => {
 client.on ("message", async message => {
 
     //명령어모음
-    if (message.content == "명령어") {
+    if (message.content == ".help") {
         const Command_Embed = new MessageEmbed()
             .setTitle("건우봇의 명령어")
             .setDescription("접두사는 `.` `..` 입니다.")
             .addFields(
-                { name: "도움말", value: "> `.help`" }
-            );
+                { name: "도움말", value: "> `.help` `..help`" }, 
+                { name: "따라하기", value: "> `.따라하기`" }
+            )
+            .setThumbnail("https://github.com/Geonwoo1109/DiscordBot/blob/main/ProfileImage.png")
+            .setFooter("Geonwoo.Kim");
         message.channel.send( Command_Embed );
     };
 
-    if (message.content == "명령어 설명") {
+    if (message.content == "..help") {
         const Command_Embed_Details = new MessageEmbed()
             .setTitle("건우봇의 명령어 상세설명")
             .setColor("#170370")
