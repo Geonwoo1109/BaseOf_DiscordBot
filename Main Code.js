@@ -22,9 +22,11 @@ client.on ("message", async message => {
             .setTitle("건우봇의 명령어")
             .setDescription("접두사는 `.` `..` 입니다.")
             .addFields(
-                { name: "도움말", value: "> `.help` `..help`" }, 
-                { name: "따라하기", value: "> `.따라하기`" }, 
-                { name: "명령어", value: "> `abc` `def` `ghi`" }
+                { name: "도움말", value: " > `.help` `..help`" }, 
+                { name: "따라하기", value: " > `.send`" }, 
+                { name: "명령어", value: " > `abc` `def` `ghi`" }, 
+                { name: "사진", value: " > `.p`"}, 
+                { name:"ping", value: "` > .ping`" }
             )
             .setThumbnail( ProfileImageLink )
             .setFooter("Geonwoo.Kim", ProfileImageLink);
@@ -39,7 +41,7 @@ client.on ("message", async message => {
             .setDescription(`반가워요, ${message.author.username}님!`)
             .addFields(
                 { name: "`명령어`", value: "명령어 목록들을 보여줍니다." },
-                { name: "`따라하기 (내용)`", value: "봇이 따라합니다." }, 
+                { name: "`.send (내용)`", value: "봇이 따라합니다." }, 
                 { name: "`테스트`", value: "봇이 간단하게 2번 답장합니다." }, 
                 { name: "`ping`", value: "사용자의 지연시간을 알려줍니다." }, 
                 { name: "`리로드`", value: "봇을 껏다 킬 때 사용하는 명령어를 알려줍니다." }, 
@@ -48,7 +50,7 @@ client.on ("message", async message => {
                 { name: "`임베드 전체2`", value: "임베드에서 사용할 수 있는 기능 전체를 보여줍니다. 1과 선언 방식이 다릅니다.", inline: true }, 
                 { name: "`아바타`", value: "사용자의 프로필 사진을 보여줍니다." }, 
                 { name: "`rip`", value: "RIP 사진을 보여줍니다." }, 
-                { name: "`사진 (링크)`", value: "링크의 사진을 보여줍니다." }, 
+                { name: "`.p (링크)`", value: "링크의 사진을 보여줍니다." }, 
             )
             .setTimestamp()
             .setFooter("더 자세한 문의는 `건우#8173`", );
@@ -70,8 +72,8 @@ client.on ("message", async message => {
     };
 
     //따라하기
-    if (message.content.startsWith("따라하기 ")) {
-        message.channel.send(message.content.substr(5));
+    if (message.content.startsWith(".send ")) {
+        message.channel.send(message.content.substr(6));
     };
 
     //임베드
@@ -168,7 +170,7 @@ client.on ("message", async message => {
 
     /*==사용자의 행동에 따라 오류가 날 수 있는 부분==*/
     try {
-        if (message.content.startsWith("사진 ")) {
+        if (message.content.startsWith(".p ")) {
             message.channel.send(
                 new Discord.MessageAttachment(message.content.substr(3))
             );
