@@ -26,7 +26,7 @@ client.on ("message", async message => {
                 { name: "따라하기", value: " > `.send`" }, 
                 { name: "명령어", value: " > `abc` `def` `ghi`" }, 
                 { name: "사진", value: " > `.p`"}, 
-                { name:"ping", value: "` > .ping`" }
+                { name:".ping", value: "` > .ping`" }
             )
             .setThumbnail( ProfileImageLink )
             .setFooter("Geonwoo.Kim", ProfileImageLink);
