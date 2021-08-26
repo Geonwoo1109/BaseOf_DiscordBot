@@ -8,3 +8,6 @@ https://discord-kr.js.org/#/
   안그러면 일반 문자열로 취급
 
 임베드 기능 전부 사용법: https://discordjs.guide/popular-topics/embeds.html
+
+
+아무것도 안했는데 봇이 오프라인이 되는 문제 해결법: 
